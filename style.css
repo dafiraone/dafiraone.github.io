@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Silkscreen&display=swap');
+
+:root {
+     font-family: 'Poppins', sans-serif; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+header, section {
+    height: 100vh;
+}
+
+#splash {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    background-position: 100%;
+}
+
+#splash a {
+    animation: goDown .5s infinite alternate;
+    /* position: relative; */
+    /* top: 150px; */
+    cursor: default;
+}
+
+#splash a img {
+    width: 143px;
+    height: 73px;
+    opacity: 0;
+    animation: showing 1 forwards;
+    animation-delay: 4s;
+}
+
+#splash p {
+    font-size: 3.3em;
+    font-weight: bold;
+    animation: beat 1.3s 2.1s infinite alternate forwards;
+    cursor: default;
+}
+
+#splash p::selection {
+    background: rgba(0, 0, 0, 0.99);
+}
+
+#splash p span::selection {
+    color: white;
+    background: rgba(0, 0, 0, 0.99);
+}
+
+#splash p span {
+    opacity: 0;
+}
+
+
+.showname {
+    display: none;
+    animation: showing 1s 1 forwards;
+}
+
+#social {
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: animateBackground 30s infinite;
+    background-size: 280px;
+}
+
+#social-icons {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.icon {
+    border-radius: 20px;
+    background-color: rgba(217, 217, 217, 0.4);
+    text-align: center;
+    filter: grayscale(80%);
+    transition: 0.5s;
+}
+
+.icon img {
+    width: 150px;
+    height: 150px;
+}
+
+.icon:hover {
+    filter: none;
+}
+
+.socialname {
+    font-size: 4em;
+    background-color: rgba(217, 217, 217, 0.4);
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+.socialname, footer {
+    text-align: center;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+@media screen and (max-width: 1120px) {
+    #social {
+        justify-content: center;
+        min-height: 105vh;
+    }
+
+    #social-icons {
+        margin: 50px;
+        flex-wrap: wrap;
+    }
+
+    .icon {
+        flex-basis: 200px;
+        flex-grow: 1;
+        width: 150px !important;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #splash p {
+        font-size: 2.2em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #splash p {
+        font-size: 2.5em;
+    }
+
+    #splash a {
+        top: 30px;
+    }
+
+    .socialname {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    #splash p {
+        font-size: 2em;
+    }
+    #splash p:hover {
+        opacity: 1;
+        letter-spacing: 3px;
+    }
+
+    #social {
+        justify-content: center;
+        min-height: 180vh;
+    }
+}
+@media screen and (max-width: 389px) {
+    #splash p {
+        font-size: 1.7em;
+    }
+    #splash p:hover {
+        opacity: 1;
+        letter-spacing: 3px;
+    }
+    
+}
+
+@media screen and (max-height: 640px) {
+  section {
+    height: auto;
+    padding-top: 20%;
+  }
+}
+
+@keyframes beat {
+    to {
+        word-spacing: 8px;
+        letter-spacing: 5px;
+    }
+}
+
+@keyframes goDown {
+    to {
+        transform: translateY(20px);
+    }
+}
+ 
+@keyframes showing {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes animateBackground {
+    0% {
+        background-position: 0 -100%;
+    }
+    20% {
+        background-position: -50% 75%;
+    }
+    40% {
+        background-position: 50% -150%;       
+    }
+    60% {
+        background-position: 150% 25%;
+    }
+    80% {
+        background-position: 150% -50%;
+    }
+    100% {
+        background-position: 0 -100%;
+    }
+}
